@@ -1,0 +1,9 @@
+*.eclipse.core.resources.prefs
+*.eclipse.jdt.core.prefs
+*.eclipse.jpt.core.prefs
+*.eclipse.m2e.core.prefs
+*.eclipse.wst.common.component
+*.eclipse.wst.common.project.facet.core.prefs.xml
+*.eclipse.wst.common.project.facet.core.xml
+*.eclipse.wst.validation.prefs
+*.hibernate.eclipse.console.prefs

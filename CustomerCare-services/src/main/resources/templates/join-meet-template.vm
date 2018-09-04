@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Document</title>
+        <style type="text/css">
+            #include("main.css")
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="panel panel-default meeting-invite">
+                <div class="panel-heading">
+                    <h4 class="inline-block">Meet Invite</h4>
+                    <img src="http://app.s-blox.com/chat/img/logo.png" class="pull-right" alt=""/>
+                    <hr/>
+                </div>
+                <div class="panel-body">
+                    <div class="well">
+                        <div class="info">
+                            <div class="info__avatar">
+                                <img src="http://app.s-blox.com/chat/img/meeting.png" class="info__avatar-img" alt=""/>
+                            </div>
+                            <div class="info__details">
+                                <h3 class="info__name">$meetName</h3>
+                                <p class="info__desc">Hosted by $hostedBy</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-orange" href="$meetURL">Join Meet</a>
+                        <div class="participants inline-block pull-right">
+                            <p class="participants__number text-right">$participantsCount</p>
+                            <ul class="list-inline pull-right">
+                                #foreach( $image in $participants )
+                                <li><img src="$image" class="participants__img" alt=""/></li>
+                                #end
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="text-center">
+                <p>
+                    <h5 class="text-uppercase inline-block">get the app </h5>
+                    <ul class="list-inline inline-block">
+                        <li><a href="#" class="text-uppercase"><i class="fa fa-apple"></i> ios</a></li>
+                        <li><a href="#" class="text-uppercase"><i class="fa fa-android"></i> android</a></li>
+                    </ul>
+                </p>
+                <p>S-Blox All rights reserved.</p>
+            </footer>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,167 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>CustomerCare-dataaccess</artifactId>
+	<packaging>jar</packaging>
+
+	<name>CustomerCare-dataaccess</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>CustomerCare</groupId>
+		<artifactId>CustomerCare-parent</artifactId>
+		<version>1.0</version>
+		<relativePath>../CustomerCare-parent</relativePath>
+	</parent>
+
+
+	<properties>
+		<hibernate.entitymanager.version>5.2.4.Final</hibernate.entitymanager.version>
+		<hibernate.validator.version>5.3.1.Final</hibernate.validator.version>
+		<cglib.version>3.2.4</cglib.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<eclipse.persistence.version>2.6.4</eclipse.persistence.version>
+		<spring.data.version>1.10.4.RELEASE</spring.data.version>
+
+
+		<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<datasource.jndi>jdbc/CustomerCare</datasource.jndi>
+
+				<jdbc.url>jdbc:mysql://95.177.208.115:3306/customercare?autoReconnect=true</jdbc.url>
+				<jdbc.username>customercare</jdbc.username>
+				<jdbc.password>6B>U[u~9kGsDg~pr</jdbc.password>
+
+
+				<jdbc.url_sblox>jdbc:mysql://95.177.208.115:3306/jobs?autoReconnect=true</jdbc.url_sblox>
+				<jdbc.username_sblox>sbloxJobs</jdbc.username_sblox>
+				<jdbc.password_sblox>~48f`F+?{v*T#E#</jdbc.password_sblox>
+
+
+				<jdbc.url_netlogic>jdbc:mysql://95.177.208.114:3306/activation?autoReconnect=true</jdbc.url_netlogic>
+				<jdbc.username_netlogic>S-Blox</jdbc.username_netlogic>
+				<jdbc.password_netlogic>$-Blox97531</jdbc.password_netlogic>
+
+			</properties>
+			<modules>
+			</modules>
+		</profile>
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<datasource.jndi>jdbc/CustomerCare</datasource.jndi>
+
+				<jdbc.url>jdbc:mysql://localhost:3306/customercare?autoReconnect=true</jdbc.url>
+				<jdbc.username>customercare</jdbc.username>
+				<jdbc.password>6B>U[u~9kGsDg~pr</jdbc.password>
+
+
+				<jdbc.url_sblox>jdbc:mysql://localhost:3306/jobs?autoReconnect=true</jdbc.url_sblox>
+				<jdbc.username_sblox>sbloxJobs</jdbc.username_sblox>
+				<jdbc.password_sblox>~48f`F+?{v*T#E#</jdbc.password_sblox>
+
+
+				<jdbc.url_netlogic>jdbc:mysql://95.177.208.114:3306/activation?autoReconnect=true</jdbc.url_netlogic>
+				<jdbc.username_netlogic>S-Blox</jdbc.username_netlogic>
+				<jdbc.password_netlogic>$-Blox97531</jdbc.password_netlogic>
+
+			</properties>
+			<modules>
+			</modules>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<datasource.jndi>jdbc/CustomerCare</datasource.jndi>
+
+				<jdbc.url>jdbc:mysql://localhost:3306/customercare?autoReconnect=true</jdbc.url>
+				<jdbc.username>customercare</jdbc.username>
+				<jdbc.password>#rG$o$3ft0wm</jdbc.password>
+
+				<jdbc.url_sblox>jdbc:mysql://localhost:3306/jobs?autoReconnect=true</jdbc.url_sblox>
+				<jdbc.username_sblox>customercare</jdbc.username_sblox>
+				<jdbc.password_sblox>#rG$o$3ft0wm</jdbc.password_sblox>
+
+				<jdbc.url_netlogic>jdbc:mysql://199.195.118.182:3306/activation?autoReconnect=true</jdbc.url_netlogic>
+				<jdbc.username_netlogic>S-Blox</jdbc.username_netlogic>
+				<jdbc.password_netlogic>$-Blox97531</jdbc.password_netlogic>
+
+			</properties>
+			<modules>
+			</modules>
+		</profile>
+	</profiles>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>CustomerCare</groupId>
+			<artifactId>CustomerCare-common</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>${springframework.boot}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>${springframework.boot}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

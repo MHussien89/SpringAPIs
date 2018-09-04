@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+       xmlns:wss="http://jax-ws.dev.java.net/spring/servlet" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                            http://jax-ws.dev.java.net/spring/core 
+                            http://jax-ws.dev.java.net/spring/core.xsd
+                            http://jax-ws.dev.java.net/spring/servlet
+                            http://jax-ws.dev.java.net/spring/servlet.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/mvc
+                            http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+	
+    <import resource="classpath:/META-INF/spring/app-context-dao.xml" />
+    <import resource="classpath:/META-INF/spring/app-context-business.xml" />
+    <import resource="classpath:/META-INF/spring/app-context-service.xml" />
+
+    <context:component-scan base-package="com.sblox" />
+	
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+
+    <mvc:annotation-driven />
+    
+</beans>
